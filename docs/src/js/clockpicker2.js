@@ -155,9 +155,12 @@
       //    });
 
       $(
-        '<button type="button" class="btn btn-sm btn-default clockpicker-button am-button">' +
+        '<div class="AMPMSwitch">' +
+        '<input type="radio" name="Row0" value="A" id="ARow0" class="">' +
           "AM" +
-          "</button>"
+          "</input>" +
+          '<label for="ARow0">AM</label>'
+
       )
         .on("click", function() {
           self.amOrPm = "AM";
@@ -165,14 +168,17 @@
             .empty()
             .append("AM");
         })
+
         .click($.proxy(this.done, this))
 
         .appendTo(this.amPmBlock);
 
       $(
-        '<button type="button" class="btn btn-sm btn-default clockpicker-button pm-button">' +
+        '<input type="radio" name="Row0" value="P" id="BRow0" checked />' +
+        '<label for="BRow0">PM</label>' +
+        '<input type="radio" class="">' +
           "PM" +
-          "</button>"
+          "</input>" + "</div>"
       )
         .on("click", function() {
           self.amOrPm = "PM";
