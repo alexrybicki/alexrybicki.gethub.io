@@ -7,6 +7,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            function myFunct() {
+                var inputTime = document.getElementById('timeInput').value;
+                document.getElementById('timeLabel').innerHTML = "You entered " + inputTime + "."
+            }
             var input = $('#timeInput');
             input.clockpicker({
                 twelvehour: true, //12 hour time
@@ -14,10 +18,6 @@
                 vibrate: true,
                 change: myFunct //runs myFunct(); When the user is done inputting.
             });
-            function myFunct() {
-                var inputTime = document.getElementById('timeInput').value;
-                document.getElementById('timeLabel').innerHTML = "You entered " + inputTime + "."
-            }
         });
     </script>
 </head>
