@@ -4,7 +4,7 @@
 # Time Picker
 Modified fork of [https://github.com/weareoutman/clockpicker](https://github.com/weareoutman/clockpicker)
 
-Use the sources [here](https://src.rybicki.dev/docs/index.html).
+Use the sources [here](https://src.rybicki.dev/docs/src/index.html).
 ## Usage
 requires jquery.
 ```html
