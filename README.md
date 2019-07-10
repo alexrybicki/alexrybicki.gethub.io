@@ -10,27 +10,38 @@ Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
 ## Usage
 requires jquery.
 ```html
+<!DOCTYPE html>
+<html>
+
 <head>
-<link rel="stylesheet" type="text/css" href="https://src.rybicki.dev/docs/src/index.html">
-<script defer src="https://src.rybicki.dev/docs/src/js/clockpicker.min.js"></script>
-<script type="text/javascript">
+    <link rel="stylesheet" type="text/css" href="https://src.rybicki.dev/docs/src/css/clockpicker.min.css">
+    <script defer src="https://src.rybicki.dev/docs/src/js/clockpicker.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
 ```
 ```javascript
-    $(document).ready(function(){
-        var input = $('#time');
-        input.clockpicker({
-            twelvehour: true, #12 hour time
-            donetext: 'Done', 
-            vibrate:true,
-            change: myFunct #runs myFunct(); When the user is done inputting.
+        function myFunct() {
+            var inputTime = document.getElementById('timeInput').value;
+            document.getElementById('timeLabel').innerHTML = "You entered " + inputTime + "."
+        }
+        $(document).ready(function () {
+            var input = $('#timeInput');
+            input.clockpicker({
+                twelvehour: true, //12 hour time
+                donetext: 'Done',
+                vibrate: true,
+            });
         });
-    });
 ```
-```html
+```html        
     </script>
 </head>
+
 <body>
- <input id="time">
+    <p>
+        <input id="timeInput" value="Click Here" onChange="myFunct()">
+        <label id="timeLabel" for="time"></label>
+    </p>
 </body>
 ```
 ## Contributing
