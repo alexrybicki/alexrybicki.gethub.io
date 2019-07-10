@@ -6,11 +6,13 @@
     <script defer src="https://src.rybicki.dev/docs/src/js/clockpicker.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
+        function onLoad() {
             function myFunct() {
                 var inputTime = document.getElementById('timeInput').value;
                 document.getElementById('timeLabel').innerHTML = "You entered " + inputTime + "."
             }
+        }
+        $(document).ready(function () {
             var input = $('#timeInput');
             input.clockpicker({
                 twelvehour: true, //12 hour time
@@ -22,7 +24,7 @@
     </script>
 </head>
 
-<body>
+<body onload="onLoad()">
     <p>
         <input id="timeInput" value="Click Here">
         <label id="timeLabel" for="time"></label>
