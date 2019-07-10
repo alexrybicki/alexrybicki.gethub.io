@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="https://src.rybicki.dev/docs/src/index.html">
+<script defer src="https://src.rybicki.dev/docs/src/js/clockpicker.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var input = $('#time');
+        input.clockpicker({
+            twelvehour: true, #12 hour time
+            donetext: 'Done', 
+            vibrate:true,
+            change: myFunct #runs myFunct(); When the user is done inputting.
+        });
+    });
+    </script>
+</head>
+<body>
+<p>
+<input id="time">
+</p>
+</body>
