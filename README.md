@@ -16,7 +16,7 @@ Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
 <head>
     <link rel="stylesheet" type="text/css" href="https://src.rybicki.dev/docs/src/css/clockpicker.min.css">
     <script defer src="https://src.rybicki.dev/docs/src/js/clockpicker.min.js"></script>
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript">
 ```
 ```javascript
