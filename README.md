@@ -13,7 +13,7 @@ requires jquery.
 <script defer src="https://src.rybicki.dev/docs/src/js/clockpicker.min.js"></script>
 <script type="text/javascript">
 ```
-```javacript
+```javascript
     $(document).ready(function(){
         var input = $('#time');
         input.clockpicker({
