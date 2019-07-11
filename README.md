@@ -40,7 +40,7 @@ Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
 <body>
     <p>
         <input id="timeInput" value="Click Here" onChange="myFunct()">
-        <label id="timeLabel" for="time"></label>
+        <label id="timeLabel" for="timeInput"></label>
     </p>
 </body>
 ```
