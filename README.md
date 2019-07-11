@@ -14,8 +14,8 @@ Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="https://src.rybicki.dev/docs/src/css/clockpicker.min.css">
-    <script defer src="https://src.rybicki.dev/docs/src/js/clockpicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://src.rybicki.dev/docs/src/css/clockpicker2.min.css">
+    <script defer src="https://src.rybicki.dev/docs/src/js/clockpicker2.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript">
 ```
