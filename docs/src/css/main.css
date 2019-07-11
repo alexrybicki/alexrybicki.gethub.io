@@ -1,0 +1,13 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+    font-family: 'Open Sans', sans-serif;
+    /* font-size: 30px; */
+    color: #000000;
+    /* background: linear-gradient(to bottom, #92c3ff, #72b0fc); */
+}
