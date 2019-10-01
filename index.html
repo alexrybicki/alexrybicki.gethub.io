@@ -8,6 +8,8 @@
     <meta name="description" content="src.rybicki.dev">
     <meta name="keywords" content="dev,src,source">
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://src.rybicki.dev/docs/src/css/main.css">
 </head>
@@ -19,6 +21,7 @@
         function autorun() {
             function loaded() {
                 document.getElementById('bodyResult').textContent = "Page Loaded";
+                document.getElementById('circleCheck').innerHTML = '<i class="far fa-check-circle"></i>';
             }
             loaded();
         }
@@ -27,6 +30,7 @@
         else window.onload = autorun;
     </script>
     <p id='bodyResult'></p>
+    <p id='circleCheck'></p>
 </body>
 
 </html>
