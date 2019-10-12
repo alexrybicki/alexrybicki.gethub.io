@@ -8,7 +8,7 @@ Use the sources [here](https://src.rybicki.dev/docs/src/index.html).
 
 ## Usage
 requires jquery.
-Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
+Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).&nbsp;
 ![Useage Example](/TimePicker2_Usage_Example.png)
 
 ```html
