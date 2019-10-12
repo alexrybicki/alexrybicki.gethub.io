@@ -9,6 +9,10 @@ Use the sources [here](https://src.rybicki.dev/docs/src/index.html).
 ## Usage
 requires jquery.
 Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
+<p align="left">
+  <img src="/docs/TimePicker2_Usage_Example.png">
+</p>
+
 ```html
 <!DOCTYPE html>
 <html>
