@@ -136,12 +136,12 @@
 
       var amPmButtons = $(amPmButtonsTemplate);
       $(
-        '<input type="radio" name="radioAM" value="AM" id="radioAM" style="display:none"></input><label for="radioAM">AM</label>'
+        '<input type="radio" name="radioAM" value="AM" id="radioAM'+idCounter+'" style="display:none"></input><label for="radioAM'+idCounter+'">AM</label>'
       )
         .on("click", function() {
           self.amOrPm = " AM";
-          $("#radioAM").prop("checked", true);
-          $("#radioPM").prop("checked", false);
+          $("#radioAM"+idCounter).prop("checked", true);
+          $("#radioPM"+idCounter).prop("checked", false);
           $(".clockpicker-span-am-pm")
             .empty()
             .append(" AM");
@@ -151,12 +151,12 @@
         .appendTo(this.amPmBlock);
 
       $(
-        '<input type="radio" name="radioPM" value="PM" id="radioPM" style="display:none" checked="checked"></input><label for="radioPM">PM</label>'
+        '<input type="radio" name="radioPM" value="PM" id="radioPM'+idCounter+'" style="display:none" checked="checked"></input><label for="radioPM'+idCounter+'">PM</label>'
       )
         .on("click", function() {
           self.amOrPm = " PM";
-          $("#radioAM").prop("checked", false);
-          $("#radioPM").prop("checked", true);
+          $("#radioAM"+idCounter).prop("checked", false);
+          $("#radioPM"+idCounter).prop("checked", true);
           $(".clockpicker-span-am-pm")
             .empty()
             .append(" PM");
