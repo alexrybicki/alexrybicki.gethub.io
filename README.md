@@ -12,6 +12,7 @@ Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
 <p align="left">
   <img src="/docs/TimePicker2_Usage_Example.png">
 </p>
+Demo of [multiple instances](https://src.rybicki.dev/docs/src/picker_example_difference.html)
 
 ```html
 <!DOCTYPE html>
