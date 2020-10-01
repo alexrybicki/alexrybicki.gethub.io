@@ -48,8 +48,6 @@ Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
     </p>
 </body>
 ```
-## Caveats
-Multiple instances of TimePicker2 is currently broken. Please use TimePicker if you require more than one use of the class per html.
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
