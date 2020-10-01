@@ -11,7 +11,7 @@ Requires jquery.
 Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
 <p align="center">
   <img src="/docs/TimePicker2_Usage_Example.png"></p>
-Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
+  
 Demo of [multiple instances](https://src.rybicki.dev/docs/src/picker_example_difference.html).
 
 ```html
