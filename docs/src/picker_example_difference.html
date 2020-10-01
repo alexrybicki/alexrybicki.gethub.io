@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="https://src.rybicki.dev/docs/src/css/clockpicker2.css">
+    <script defer src="./clockpicker2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script type="text/javascript">
+        function TimeDifference() {
+
+            //find difference
+            var timeA = moment(document.getElementById("timeInputA").value,"hh:mmA");
+            var timeB = moment(document.getElementById("timeInputB").value,"hh:mmA");
+            var minutes = timeB.diff(timeA, 'minutes');
+            var interval = moment().hour(0).minute(minutes);
+            var difference = interval.format("HH:mm");
+            document.getElementById('timeLabelDif').innerHTML = difference;
+        }
+        //onload
+        $(document).ready(function () {
+            var inputA = $('#timeInputA');
+            inputA.clockpicker({
+                twelvehour: true, //12 hour time
+                donetext: 'Done',
+                vibrate: true,
+            });
+            var inputB = $('#timeInputB');
+            inputB.clockpicker({
+                twelvehour: true, //12 hour time
+                donetext: 'Done',
+                vibrate: true,
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p>
+        <input id="timeInputA" value="Time A" onChange="TimeDifference()">
+        <input id="timeInputB" value="Time B" onChange="TimeDifference()">
+    </p>
+    <p>
+        <label id="timeLabelDif"></label>
+    </p>
+</body>
