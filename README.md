@@ -21,7 +21,7 @@ Demo of [multiple instances](https://src.rybicki.dev/docs/src/picker_example_dif
 <head>
     <link rel="stylesheet" type="text/css" href="https://src.rybicki.dev/docs/src/css/clockpicker2.min.css">
     <script defer src="https://src.rybicki.dev/docs/src/js/clockpicker2.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
 ```
 ```javascript
