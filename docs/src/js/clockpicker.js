@@ -97,6 +97,9 @@
     "</div>"
   ].join("");
 
+  var AMorPM = "";
+
+
   // ClockPicker
   function ClockPicker(element, options) {
     var popover = $(tpl),
@@ -135,8 +138,8 @@
 
       var amPmButtons = $(amPmButtonsTemplate);
       $(
-        '<input type="radio" name="radioAM'+idCounter+'" value="AM" id="radioAM'+idCounter+'" style='+
-        // '"display:none"'+
+        '<input type="radio" name="radioAMPM'+idCounter+'" value="AM" id="radioAM'+idCounter+'"'+
+        // 'style="display:none"'+
         '></input><label for="radioAM'+idCounter+'">AM</label>'
       )
         .on("click", function() {
@@ -152,8 +155,8 @@
         .appendTo(this.amPmBlock);
 
       $(
-        '<input type="radio" name="radioPM'+idCounter+'" value="PM" id="radioPM'+idCounter+'" style='+
-        // '"display:none"'+
+        '<input type="radio" name="radioAMPM'+idCounter+'" value="PM" id="radioPM'+idCounter+'"'+
+       // 'style="display:none"'+
         ' checked="checked"></input><label for="radioPM'+idCounter+'">PM</label>'
       )
         .on("click", function() {
@@ -495,7 +498,9 @@
     this.minutes = +value[1] || 0;
     this.spanHours.html(leadingZero(this.hours));
     this.spanMinutes.html(leadingZero(this.minutes));
-    this.spanAmPm.html(" ??");
+    if ( this.spanAmPm.value == "") { this.spanAmPm.html(" ??"); }
+    else if (this.spanAmPm.value == " AM") { this.spanAmPm.html(" AM"); }
+    else if (this.spanAmPm.value == " PM") { this.spanAmPm.html(" PM"); }
 
     // Toggle to hours view
     this.toggleView("hours");
