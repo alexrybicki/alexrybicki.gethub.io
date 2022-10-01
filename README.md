@@ -13,6 +13,12 @@ Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).&nbsp;
 <p align="center">
   <img src="/TimePicker2_Usage_Example.png">
 </p>
+Requires jquery.
+Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
+<p align="center">
+  <img src="/docs/TimePicker2_Usage_Example.png"></p>
+  
+Demo of [multiple instances](https://src.rybicki.dev/docs/src/picker_example_difference.html).
 
 ```html
 <!DOCTYPE html>
@@ -21,7 +27,7 @@ Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).&nbsp;
 <head>
     <link rel="stylesheet" type="text/css" href="https://src.rybicki.dev/docs/src/css/clockpicker2.min.css">
     <script defer src="https://src.rybicki.dev/docs/src/js/clockpicker2.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
 ```
 ```javascript

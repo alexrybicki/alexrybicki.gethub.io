@@ -97,6 +97,9 @@
     "</div>"
   ].join("");
 
+  var AMorPM = "";
+
+
   // ClockPicker
   function ClockPicker(element, options) {
     var popover = $(tpl),
@@ -127,46 +130,47 @@
     this.spanHours = popover.find(".clockpicker-span-hours");
     this.spanMinutes = popover.find(".clockpicker-span-minutes");
     this.spanAmPm = popover.find(".clockpicker-span-am-pm");
-    this.amOrPm = " PM";
 
     // Setup for for 12 hour clock if option is selected
     if (options.twelvehour) {
       var amPmButtonsTemplate = [
       ].join("");
 
+      //AM / PM Switch Radio button Template
       var amPmButtons = $(amPmButtonsTemplate);
       $(
-        '<input type="radio" name="radioAM" value="AM" id="radioAM" style="display:none"></input><label for="radioAM">AM</label>'
+        '<input type="radio" name="radioAMPM'+idCounter+'" value="AM" id="radioAM'+idCounter+'"'+
+        'style="display:none"'+
+        '></input><label for="radioAM'+idCounter+'">AM</label>'
       )
         .on("click", function() {
           self.amOrPm = " AM";
-          $("#radioAM").prop("checked", true);
-          $("#radioPM").prop("checked", false);
+          $("#radioAM"+idCounter).prop("checked", true);
+          $("#radioPM"+idCounter).prop("checked", false);
           $(".clockpicker-span-am-pm")
             .empty()
             .append(" AM");
         })
-        //.click($.proxy(this.done, this))
-
         .appendTo(this.amPmBlock);
 
       $(
-        '<input type="radio" name="radioPM" value="PM" id="radioPM" style="display:none" checked="checked"></input><label for="radioPM">PM</label>'
+        '<input type="radio" name="radioAMPM'+idCounter+'" value="PM" id="radioPM'+idCounter+'"'+
+       'style="display:none"'+
+        ' checked="checked"></input><label for="radioPM'+idCounter+'">PM</label>'
       )
         .on("click", function() {
           self.amOrPm = " PM";
-          $("#radioAM").prop("checked", false);
-          $("#radioPM").prop("checked", true);
+          $("#radioAM"+idCounter).prop("checked", false);
+          $("#radioPM"+idCounter).prop("checked", true);
           $(".clockpicker-span-am-pm")
             .empty()
             .append(" PM");
         })
-        //.click($.proxy(this.done, this))
         .appendTo(this.amPmBlock);
     }
 
     if (!options.autoclose) {
-      // If autoclose is not setted, append a button
+      // If autoclose is not set, append a button
       $(
         '<button type="button" class="btn btn-sm btn-default btn-block clockpicker-button">' +
           options.donetext +
@@ -492,6 +496,9 @@
     this.minutes = +value[1] || 0;
     this.spanHours.html(leadingZero(this.hours));
     this.spanMinutes.html(leadingZero(this.minutes));
+    if ( this.spanAmPm.value == "") { this.spanAmPm.html(" ??"); }
+    else if (this.spanAmPm.value == " AM") { this.spanAmPm.html(" AM"); }
+    else if (this.spanAmPm.value == " PM") { this.spanAmPm.html(" PM"); }
 
     // Toggle to hours view
     this.toggleView("hours");

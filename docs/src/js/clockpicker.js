@@ -89,11 +89,16 @@
     '<div class="clockpicker-dial clockpicker-hours"></div>',
     '<div class="clockpicker-dial clockpicker-minutes clockpicker-dial-out"></div>',
     "</div>",
+    "<br>",
     '<span class="clockpicker-am-pm-block">',
+    '<div class="AMPMSwitch">',
     "</span>",
     "</div>",
     "</div>"
   ].join("");
+
+  var AMorPM = "";
+
 
   // ClockPicker
   function ClockPicker(element, options) {
@@ -101,7 +106,7 @@
       plate = popover.find(".clockpicker-plate"),
       hoursView = popover.find(".clockpicker-hours"),
       minutesView = popover.find(".clockpicker-minutes"),
-      amPmBlock = popover.find(".clockpicker-am-pm-block"),
+      amPmBlock = popover.find(".AMPMSwitch"),
       isInput = element.prop("tagName") === "INPUT",
       input = isInput ? element : element.find("input"),
       addon = element.find(".input-group-addon"),
@@ -125,67 +130,47 @@
     this.spanHours = popover.find(".clockpicker-span-hours");
     this.spanMinutes = popover.find(".clockpicker-span-minutes");
     this.spanAmPm = popover.find(".clockpicker-span-am-pm");
-    this.amOrPm = "PM";
 
     // Setup for for 12 hour clock if option is selected
     if (options.twelvehour) {
       var amPmButtonsTemplate = [
-        '<div class="clockpicker-am-pm-block">',
-        '<button type="button" class="btn btn-sm btn-default clockpicker-button clockpicker-am-button">',
-        "AM</button>",
-        '<button type="button" class="btn btn-sm btn-default clockpicker-button clockpicker-pm-button">',
-        "PM</button>",
-        "</div>"
       ].join("");
 
+      //AM / PM Switch Radio button Template
       var amPmButtons = $(amPmButtonsTemplate);
-      //amPmButtons.appendTo(plate);
-
-      ////Not working b/c they are not shown when this runs
-      //$('clockpicker-am-button')
-      //    .on("click", function() {
-      //        self.amOrPm = "AM";
-      //        $('.clockpicker-span-am-pm').empty().append('AM');
-      //    });
-      //
-      //$('clockpicker-pm-button')
-      //    .on("click", function() {
-      //         self.amOrPm = "PM";
-      //        $('.clockpicker-span-am-pm').empty().append('PM');
-      //    });
-
       $(
-        '<button type="button" class="btn btn-sm btn-default clockpicker-button am-button">' +
-          "AM" +
-          "</button>"
+        '<input type="radio" name="radioAMPM'+idCounter+'" value="AM" id="radioAM'+idCounter+'"'+
+        'style="display:none"'+
+        '></input><label for="radioAM'+idCounter+'">AM</label>'
       )
         .on("click", function() {
-          self.amOrPm = "AM";
+          self.amOrPm = " AM";
+          $("#radioAM"+idCounter).prop("checked", true);
+          $("#radioPM"+idCounter).prop("checked", false);
           $(".clockpicker-span-am-pm")
             .empty()
-            .append("AM");
+            .append(" AM");
         })
-        .click($.proxy(this.done, this))
-
         .appendTo(this.amPmBlock);
 
       $(
-        '<button type="button" class="btn btn-sm btn-default clockpicker-button pm-button">' +
-          "PM" +
-          "</button>"
+        '<input type="radio" name="radioAMPM'+idCounter+'" value="PM" id="radioPM'+idCounter+'"'+
+       'style="display:none"'+
+        ' checked="checked"></input><label for="radioPM'+idCounter+'">PM</label>'
       )
         .on("click", function() {
-          self.amOrPm = "PM";
+          self.amOrPm = " PM";
+          $("#radioAM"+idCounter).prop("checked", false);
+          $("#radioPM"+idCounter).prop("checked", true);
           $(".clockpicker-span-am-pm")
             .empty()
-            .append("PM");
+            .append(" PM");
         })
-        .click($.proxy(this.done, this))
         .appendTo(this.amPmBlock);
     }
 
     if (!options.autoclose) {
-      // If autoclose is not setted, append a button
+      // If autoclose is not set, append a button
       $(
         '<button type="button" class="btn btn-sm btn-default btn-block clockpicker-button">' +
           options.donetext +
@@ -415,7 +400,7 @@
     align: "left", // popover arrow align
     donetext: "Done", // done button text
     autoclose: false, // auto close when minute is selected
-    twelvehour: false, // change to 12 hour AM/PM clock from 24 hour
+    twelvehour: true, // change to 12 hour AM/PM clock from 24 hour
     vibrate: true // vibrate the device when dragging clock hand
   };
 
@@ -511,6 +496,9 @@
     this.minutes = +value[1] || 0;
     this.spanHours.html(leadingZero(this.hours));
     this.spanMinutes.html(leadingZero(this.minutes));
+    if ( this.spanAmPm.value == "") { this.spanAmPm.html(" ??"); }
+    else if (this.spanAmPm.value == " AM") { this.spanAmPm.html(" AM"); }
+    else if (this.spanAmPm.value == " PM") { this.spanAmPm.html(" PM"); }
 
     // Toggle to hours view
     this.toggleView("hours");
