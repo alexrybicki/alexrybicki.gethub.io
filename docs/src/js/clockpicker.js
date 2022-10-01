@@ -136,10 +136,11 @@
       var amPmButtonsTemplate = [
       ].join("");
 
+      //AM / PM Switch Radio button Template
       var amPmButtons = $(amPmButtonsTemplate);
       $(
         '<input type="radio" name="radioAMPM'+idCounter+'" value="AM" id="radioAM'+idCounter+'"'+
-        // 'style="display:none"'+
+        'style="display:none"'+
         '></input><label for="radioAM'+idCounter+'">AM</label>'
       )
         .on("click", function() {
@@ -150,13 +151,11 @@
             .empty()
             .append(" AM");
         })
-        //.click($.proxy(this.done, this))
-
         .appendTo(this.amPmBlock);
 
       $(
         '<input type="radio" name="radioAMPM'+idCounter+'" value="PM" id="radioPM'+idCounter+'"'+
-       // 'style="display:none"'+
+       'style="display:none"'+
         ' checked="checked"></input><label for="radioPM'+idCounter+'">PM</label>'
       )
         .on("click", function() {
@@ -167,12 +166,11 @@
             .empty()
             .append(" PM");
         })
-        //.click($.proxy(this.done, this))
         .appendTo(this.amPmBlock);
     }
 
     if (!options.autoclose) {
-      // If autoclose is not setted, append a button
+      // If autoclose is not set, append a button
       $(
         '<button type="button" class="btn btn-sm btn-default btn-block clockpicker-button">' +
           options.donetext +
