@@ -7,6 +7,12 @@ Modified fork of [https://github.com/weareoutman/clockpicker](https://github.com
 Use the sources [here](https://src.rybicki.dev/docs/src/index.html).
 
 ## Usage
+requires jquery.
+Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).&nbsp;
+
+<p align="center">
+  <img src="/TimePicker2_Usage_Example.png">
+</p>
 Requires jquery.
 Demo [here](https://src.rybicki.dev/docs/src/picker_example.html).
 <p align="center">
