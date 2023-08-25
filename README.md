@@ -1,5 +1,3 @@
-# alexrybicki.gethub.io
-
 
 # Time Picker 2
 Modified fork of [https://github.com/weareoutman/clockpicker](https://github.com/weareoutman/clockpicker)
